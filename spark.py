@@ -1,3 +1,14 @@
+if __name__ == "__main__":
+    
+    start_time = time.time()
+    #spark_map(1)
+    #spark_reduce(3, 4)
+    start_spark_session()
+    #stocks = get_stocks_from_combination_index(100)
+    #calculate_money_today(stocks, [0.2, 0.2, 0.2, 0.2, 0.2])
+    
+    print("--- %s seconds ---" % (time.time() - start_time))
+
 import random
 import pickle
 import datetime
@@ -195,6 +206,7 @@ def start_spark_session():
         .appName("Thesis")\
         .getOrCreate()
     c1 = spark.sparkContext\
+        .addPyFile("dependencies.zip")
         .parallelize([ get_random_stock_combination_index() for _ in range(1, number_of_executed_combinations + 1)], partitions)\
         .map(spark_map)\
         .reduce(spark_reduce)
@@ -210,15 +222,5 @@ def start_spark_session():
     spark.stop()
 
 
-if __name__ == "__main__":
-    
-    start_time = time.time()
-    #spark_map(1)
-    #spark_reduce(3, 4)
-    start_spark_session()
-    #stocks = get_stocks_from_combination_index(100)
-    #calculate_money_today(stocks, [0.2, 0.2, 0.2, 0.2, 0.2])
 
-    
-    print("--- %s seconds ---" % (time.time() - start_time))
     
