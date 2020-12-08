@@ -20,8 +20,8 @@ number_of_selected_stocks = 5
 risk_free_rate = 0.05
 
 # partitions number is recommended equal to computer thread number
-partitions = 8
-number_of_executed_combinations = 100 * partitions
+partitions = 16
+number_of_executed_combinations = 50 * partitions
 
 #we use historical data to approximate mean and variance
 start_date='2005-01-01'
