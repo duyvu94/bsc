@@ -254,7 +254,7 @@ def show_efficient_frontier():
     plt.show()
 
 def read_argvs(argv):
-    help_text = "help: efficient_frontier.py [-p <partitions_number>] [-u <calculated_units_number>] [-e]"
+    help_text = "help: efficient_frontier.py [-p <partitions_number>] [-u <calculated_units_number>] [-e] [-s <location_to_stock_data>]"
     try:
         opts, args = getopt.getopt(argv,"hp:u:e")
     except getopt.GetoptError:
@@ -270,6 +270,8 @@ def read_argvs(argv):
             globals()["units"] = int(arg)
         elif opt == "-e":
             globals()["run_spark"] = False
+        elif opt == "-s":
+            globals()["data_dir"] = arg
 
 if __name__ == "__main__":
     read_argvs(sys.argv[1:])
@@ -277,6 +279,7 @@ if __name__ == "__main__":
     print("Partitions: ", partitions)
     print("Units per partitions: ", units)
     print("Number of executed stock sets: ", number_of_executed_combinations)
+    print("Data location: ", data_dir)
 
     start_time = time.time()
     
