@@ -254,7 +254,7 @@ def show_efficient_frontier():
     plt.show()
 
 def read_argvs(argv):
-    help_text = "help: efficient_frontier.py [-p <partitions_number>] [-u <calculated_units_number>] [-e] [-s <location_to_stock_data>]"
+    help_text = "help: efficient_frontier.py [-p <partitions_number>] [-u <calculated_units_number>] [-s <location_to_stock_data>] [-e]"
     try:
         opts, args = getopt.getopt(argv,"hp:u:es:")
     except getopt.GetoptError:
