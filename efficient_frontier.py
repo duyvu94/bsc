@@ -31,7 +31,7 @@ start_date='2005-01-01'
 end_date ='2016-01-04'
 
 #data location
-data_dir = "/home/duyvu/Downloads/stocks/Data/Data"
+data_dir = "https://raw.githubusercontent.com/sppro94/bsc/main/stocks"
 
 #we assume to invest money at "start_date" and let's calculate how much we have "today"
 invested_money = 100000
