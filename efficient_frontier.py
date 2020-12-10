@@ -18,7 +18,7 @@ import yfinance as yf
 from pyspark.sql import SparkSession
 
 number_of_selected_stocks = 5
-risk_free_rate = 0.05
+risk_free_rate = 0.005
 
 # partitions number is recommended equal to computer's threads number
 partitions = 8
